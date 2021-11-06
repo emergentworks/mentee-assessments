@@ -1,0 +1,74 @@
+h1,
+h3,
+span,
+p,
+li {
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	margin: 0px;
+}
+/*
+##### color theme used ofor this template: used something similar to EW colors but we can use something different #####
+  dark blue: #05386B
+  dark green: #379683
+  green: #5CDB95
+  mint-green: #8EE4AF
+  beige: #EDF5E1
+*/
+.navbar {
+	display: flex;
+	height: 64px;
+	background-color: #05386b;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.navbar > span {
+	font-size: 30px;
+	font-weight: 800;
+	color: #edf5e1;
+	text-transform: capitalize;
+	margin-right: 16px;
+	cursor: pointer;
+}
+
+.navbar > span:hover {
+	text-decoration: underline;
+}
+
+.main {
+	width: 80%;
+	max-width: 1320px;
+	margin: 0 auto;
+}
+
+.section {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.section.about-me {
+	padding: 120px 0px;
+}
+
+.section.js-challenges {
+	background-color: #edf5e1;
+}
+
+.avatar-container {
+	position: relative;
+	overflow: hidden;
+	height: 300px;
+	width: 300px;
+	border-radius: 100%;
+}
+.avatar {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	object-fit: cover;
+	object-position: top center;
+}
