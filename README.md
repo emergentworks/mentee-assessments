@@ -5,7 +5,12 @@ Goal of those Labs is to access mentee's skills and find the right placement in 
 
 
 
-## Setup
+# Javascript challenges
 
-`sudo npm install -g nodemon`
-`sudo npm install -g jest`
+You can find all the source code inside script.js file. Use that file to write logic for your functions.
+
+
+## Challenge 1
+ Write a function called sum that returns summation of two numbers
+
+ Example: sum(5, 2) should return 7
