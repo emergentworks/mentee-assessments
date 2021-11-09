@@ -7,39 +7,68 @@ let summationAnswer = () => {
   return sum(5, 2) == 7 ? true : false
 }
 
-let solution2Answer = () => {
-  // add more js challenges
+let oddCounterAnswer = () => {
+  return JSON.stringify(oddCounter()) == JSON.stringify([1, 3, 5, 7, 9]) ? true : false
 }
 
 let correctReply = "Nice Job!"
 let incorrectReply = "Not quite, try again!"
 
-challengeCompletion = {
-  challenge1: {
+challenges = [
+  {
     render: true,
     correct: summationAnswer()
   },
-  challenge2: {
+  {
     render: summationAnswer(),
-    correct: solution2Answer(),
+    correct: oddCounterAnswer(),
+  },
+  {
+    render: summationAnswer(),
+    correct: true,
+  },
+  {
+    render: summationAnswer(),
+    correct: true,
   }
-}
+]
 
-let testSolution = (answer) => {
+let responseFor = (answer) => {
   return answer.correct ? correctReply : incorrectReply
 }
 
-let checkFirstSolution = () => {
-  let challenge1 = document.getElementById("challenge-1-answer")
+let checkSolution = () => {
+  let challengeAnswerContainer = document.getElementById("challenge-answer")
+  let challenge = document.getElementsByClassName("check-solution-btn")[0]
+  let challengeId = parseInt(challenge.dataset.id)
 
-  let studentAnswer = challengeCompletion.challenge1
+  let studentAnswer = challenges[challengeId]
 
-  challenge1.innerHTML = testSolution(studentAnswer)
+  if (studentAnswer.correct) {
+    challengeId += 1
+    challenge.dataset.id = challengeId
+  }
+
+  challengeAnswerContainer.innerHTML = responseFor(studentAnswer)
 }
 
+let renderSolutionButton = () => {
+  let challengeSection = document.getElementsByClassName("check-solution-btn")[0]
+  challengeSection.dataset.id = completedChallengeNumber()
+}
+
+let completedChallengeNumber = () => {
+  console.log(challenges)
+  for (let i = 0; i < challenges.length; i++) {
+    if (challenges[i].correct == false && challenges[i].render == true) {
+      return i
+    }
+  }
+
+  return challenges.length - 1
+}
 
 window.addEventListener('DOMContentLoaded', (event) => {
-
-  // do stuff here
-
+  renderSolutionButton();
 });
+
