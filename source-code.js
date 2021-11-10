@@ -1,14 +1,14 @@
 // Code for testing challenge solutions
 let testSummation = () => {
-  return sum(5, 2) == 7 ? true : false
+  return sum(5, 2) == 7
 }
 
 let testCounter = () => {
-  return JSON.stringify(counter()) == JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) ? true : false
+  return JSON.stringify(counter()) == JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 }
 
 let testOddCounter = () => {
-  return JSON.stringify(oddCounter()) == JSON.stringify([1, 3, 5, 7, 9]) ? true : false
+  return JSON.stringify(oddCounter()) == JSON.stringify([1, 3, 5, 7, 9])
 }
 
 let testCalculateSum = () => {
@@ -16,15 +16,15 @@ let testCalculateSum = () => {
 }
 
 let testAverage = () => {
-  return JSON.stringify(average([1, 2, 3])) == 2 ? true : false
+  return JSON.stringify(average([1, 2, 3])) == 2
 }
 
 let testFindMax = () => {
-  return findMax([1, 3, 5, 6, 4, 3, 2]) == 6 ? true : false
+  return findMax([1, 3, 5, 6, 4, 3, 2]) == 6
 }
 
 let testReverseArr = () => {
-  return JSON.stringify(reverseArr([2, 5, 7, 3])) == JSON.stringify([3, 7, 5, 2]) ? true : false
+  return JSON.stringify(reverseArr([2, 5, 7, 3])) == JSON.stringify([3, 7, 5, 2])
 }
 
 // Code for defining Challenges
@@ -91,7 +91,8 @@ let isChallengeComplete = () => {
   return challengeId == challenges.length - 1 && challenges[challenges.length - 1].correct == true
 }
 
-let renderChallengeDescription = (challengeId) => {
+let renderChallengeDescription = () => {
+  let challengeId = getCompletedChallengeNumber();
   let challengeDescriptionContainer = document.getElementById("challenge-description")
   challengeDescriptionContainer.innerHTML = challenges[challengeId].description
 }
@@ -115,7 +116,7 @@ let checkSolution = () => {
       challenge.dataset.id = challengeId
     }
 
-    renderChallengeDescription(challengeId)
+    renderChallengeDescription()
     renderChallengeAnswer(challengeId)
   }
 }
@@ -138,6 +139,6 @@ let getCompletedChallengeNumber = () => {
 
 window.addEventListener('DOMContentLoaded', () => {
   setSubmittionId();
-  checkSolution();
+  renderChallengeDescription();
 });
 
