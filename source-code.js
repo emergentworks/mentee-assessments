@@ -1,36 +1,78 @@
-let summationAnswer = () => {
+// Code for testing challenge solutions
+let testSummation = () => {
   return sum(5, 2) == 7 ? true : false
 }
 
-let counterAnswer = () => {
-  console.log(counter())
+let testCounter = () => {
   return JSON.stringify(counter()) == JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) ? true : false
 }
 
-let oddCounterAnswer = () => {
+let testOddCounter = () => {
   return JSON.stringify(oddCounter()) == JSON.stringify([1, 3, 5, 7, 9]) ? true : false
 }
 
-let correctReply = "Nice Job!"
-let incorrectReply = "Not quite, try again!"
+let testCalculateSum = () => {
+  return calculateSum() == 55
+}
+
+let testAverage = () => {
+  return JSON.stringify(average([1, 2, 3])) == 2 ? true : false
+}
+
+let testFindMax = () => {
+  return findMax([1, 3, 5, 6, 4, 3, 2]) == 6 ? true : false
+}
+
+let testReverseArr = () => {
+  return JSON.stringify(reverseArr([2, 5, 7, 3])) == JSON.stringify([3, 7, 5, 2]) ? true : false
+}
+
+// Code for defining Challenges
+// Note: The way its currently set up is that the student needs to solve
+// each problem in order before moving forward.
 
 challenges = [
   {
     render: true,
-    correct: summationAnswer(),
+    correct: testSummation(),
     description: "Coding Challenge #1: Summation"
   },
   {
-    render: summationAnswer(),
-    correct: counterAnswer(),
+    render: testSummation(),
+    correct: testCounter(),
     description: "Coding challenge #2: Print numbers from 1 to 10"
   },
   {
-    render: summationAnswer(),
-    correct: oddCounterAnswer(),
+    render: testCounter(),
+    correct: testOddCounter(),
     description: "Coding challenge #3: Print the odd numbers less than 10"
+  },
+  {
+    render: testOddCounter(),
+    correct: testCalculateSum(),
+    description: "Coding challenge #4: Calculate the sum of numbers from 1 to 10"
+  },
+  {
+    render: testCalculateSum(),
+    correct: testAverage(),
+    description: "Coding challenge #5: Calculate the average of the numbers in an array of numbers"
+  },
+  {
+    render: testAverage(),
+    correct: testFindMax(),
+    description: "Coding challenge #6: Find the maximum number in an array of numbers"
+  },
+  {
+    render: testFindMax(),
+    correct: testReverseArr(),
+    description: "Coding challenge #7: Find the maximum number in an array of numbers"
   }
 ]
+
+
+// Code For rendering Answers on the page and checking solutions
+let correctReply = "Nice Job!"
+let incorrectReply = "Not quite, try again!"
 
 let responseFor = (answer) => {
   return answer.correct ? correctReply : incorrectReply
@@ -97,5 +139,6 @@ let getCompletedChallengeNumber = () => {
 
 window.addEventListener('DOMContentLoaded', () => {
   setSubmittionId();
+  checkSolution();
 });
 
