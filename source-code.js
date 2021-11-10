@@ -17,15 +17,18 @@ let incorrectReply = "Not quite, try again!"
 challenges = [
   {
     render: true,
-    correct: summationAnswer()
+    correct: summationAnswer(),
+    description: "Coding Challenge #1: Summation"
   },
   {
     render: summationAnswer(),
     correct: counterAnswer(),
+    description: "Coding challenge #2: Print numbers from 1 to 10"
   },
   {
     render: summationAnswer(),
     correct: oddCounterAnswer(),
+    description: "Coding challenge #3: Print the odd numbers less than 10"
   }
 ]
 
@@ -46,34 +49,43 @@ let isChallengeComplete = () => {
   return challengeId == challenges.length - 1 && challenges[challenges.length - 1].correct == true
 }
 
+let renderChallengeDescription = (challengeId) => {
+  let challengeDescriptionContainer = document.getElementById("challenge-description")
+  challengeDescriptionContainer.innerHTML = challenges[challengeId].description
+}
+
+let renderChallengeAnswer = (challengeId) => {
+  let challengeAnswerContainer = document.getElementById("challenge-answer")
+  let studentAnswer = challenges[challengeId]
+
+  if (studentAnswer.correct) {
+    challengeId += 1
+    challenge.dataset.id = challengeId
+  }
+
+  challengeAnswerContainer.innerHTML = responseFor(studentAnswer)
+}
+
 let checkSolution = () => {
   let done = isChallengeComplete();
   if (done) {
     return finishAssesment();
   } else {
-    let challengeAnswerContainer = document.getElementById("challenge-answer")
     let challenge = document.getElementsByClassName("check-solution-btn")[0]
     let challengeId = parseInt(challenge.dataset.id)
 
-    let studentAnswer = challenges[challengeId]
-
-    if (studentAnswer.correct) {
-      challengeId += 1
-      challenge.dataset.id = challengeId
-    }
-
-    challengeAnswerContainer.innerHTML = responseFor(studentAnswer)
+    renderChallengeDescription(challengeId)
+    renderChallengeAnswer(challengeId)
   }
 }
 
 
-let renderSolutionButton = () => {
+let setSubmittionId = () => {
   let challengeSection = document.getElementsByClassName("check-solution-btn")[0]
-  challengeSection.dataset.id = completedChallengeNumber()
+  challengeSection.dataset.id = getCompletedChallengeNumber()
 }
 
-let completedChallengeNumber = () => {
-  console.log(challenges)
+let getCompletedChallengeNumber = () => {
   for (let i = 0; i < challenges.length; i++) {
     if (challenges[i].correct == false && challenges[i].render == true) {
       return i
@@ -83,7 +95,7 @@ let completedChallengeNumber = () => {
   return challenges.length - 1
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  renderSolutionButton();
+window.addEventListener('DOMContentLoaded', () => {
+  setSubmittionId();
 });
 

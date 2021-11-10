@@ -25,6 +25,9 @@ body {
 	background-color: #05386b;
 	justify-content: flex-end;
 	align-items: center;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
 
 .navbar > span {
@@ -49,6 +52,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
+	padding: 80px 20px;
 }
 
 .section.about-me {
