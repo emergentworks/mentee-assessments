@@ -1,10 +1,10 @@
-// add logic for handling what we show inside html here, mentee will not be touching any code thats inside this file.
-// we can add some base code here that will reflect what students see on their website to make pairing more fun and interesting.
-
-
-// this logic will hit a lot of edge cases and the code is pretty messy, this is just me throwing in ideas, but the code will need to be refactored
 let summationAnswer = () => {
   return sum(5, 2) == 7 ? true : false
+}
+
+let counterAnswer = () => {
+  console.log(counter())
+  return JSON.stringify(counter()) == JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) ? true : false
 }
 
 let oddCounterAnswer = () => {
@@ -21,15 +21,11 @@ challenges = [
   },
   {
     render: summationAnswer(),
+    correct: counterAnswer(),
+  },
+  {
+    render: summationAnswer(),
     correct: oddCounterAnswer(),
-  },
-  {
-    render: summationAnswer(),
-    correct: true,
-  },
-  {
-    render: summationAnswer(),
-    correct: true,
   }
 ]
 
@@ -37,20 +33,39 @@ let responseFor = (answer) => {
   return answer.correct ? correctReply : incorrectReply
 }
 
-let checkSolution = () => {
-  let challengeAnswerContainer = document.getElementById("challenge-answer")
+let finishAssesment = () => {
+  let challenge = document.getElementsByClassName("challenge-container")[0]
+  challenge.innerHTML = `
+  <div>Great Job! You've completed all JS challenges!</div>
+  `
+}
+
+let isChallengeComplete = () => {
   let challenge = document.getElementsByClassName("check-solution-btn")[0]
   let challengeId = parseInt(challenge.dataset.id)
-
-  let studentAnswer = challenges[challengeId]
-
-  if (studentAnswer.correct) {
-    challengeId += 1
-    challenge.dataset.id = challengeId
-  }
-
-  challengeAnswerContainer.innerHTML = responseFor(studentAnswer)
+  return challengeId == challenges.length - 1 && challenges[challenges.length - 1].correct == true
 }
+
+let checkSolution = () => {
+  let done = isChallengeComplete();
+  if (done) {
+    return finishAssesment();
+  } else {
+    let challengeAnswerContainer = document.getElementById("challenge-answer")
+    let challenge = document.getElementsByClassName("check-solution-btn")[0]
+    let challengeId = parseInt(challenge.dataset.id)
+
+    let studentAnswer = challenges[challengeId]
+
+    if (studentAnswer.correct) {
+      challengeId += 1
+      challenge.dataset.id = challengeId
+    }
+
+    challengeAnswerContainer.innerHTML = responseFor(studentAnswer)
+  }
+}
+
 
 let renderSolutionButton = () => {
   let challengeSection = document.getElementsByClassName("check-solution-btn")[0]
