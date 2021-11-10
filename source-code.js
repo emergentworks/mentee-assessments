@@ -98,14 +98,7 @@ let renderChallengeDescription = (challengeId) => {
 
 let renderChallengeAnswer = (challengeId) => {
   let challengeAnswerContainer = document.getElementById("challenge-answer")
-  let studentAnswer = challenges[challengeId]
-
-  if (studentAnswer.correct) {
-    challengeId += 1
-    challenge.dataset.id = challengeId
-  }
-
-  challengeAnswerContainer.innerHTML = responseFor(studentAnswer)
+  challengeAnswerContainer.innerHTML = responseFor(challenges[challengeId])
 }
 
 let checkSolution = () => {
@@ -115,6 +108,12 @@ let checkSolution = () => {
   } else {
     let challenge = document.getElementsByClassName("check-solution-btn")[0]
     let challengeId = parseInt(challenge.dataset.id)
+    let studentAnswer = challenges[challengeId]
+
+    if (studentAnswer.correct) {
+      challengeId += 1
+      challenge.dataset.id = challengeId
+    }
 
     renderChallengeDescription(challengeId)
     renderChallengeAnswer(challengeId)
