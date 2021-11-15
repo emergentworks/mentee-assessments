@@ -1,8 +1,8 @@
 # Mentee Accessment
 
-Goal of this activity is to access mentee's skills and find the right placement in the Emergent Works' program.
+Goal of this activity is to access mentee's skills and find the right placement in the Emergent Works' program. Mentees are not meant to finish this assessment. Many of the instructions are also left ambigious. We encourage mentees to _Google_ many of the things that are referenced in this activity. 
 
-This activity involves learning basic GitHub features and modifying HTML, CSS, and Javascript code.
+This activity involves completing basic GitHub features and modifying HTML, CSS, and Javascript code.
 
 1. [Create a GitHub account](https://github.com/signup). You will need an email and a strong password. If you already have a GitHub account, feel free to login with your existing account. 
 2. Fork this repository. This means you will create a copy of this repository for your account. If you're wondering what a repository is, [a repository contains all of your project's files and each file's revision history](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories). Figure out how to fork a repository by following the instructions [here](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository).
@@ -12,7 +12,7 @@ This activity involves learning basic GitHub features and modifying HTML, CSS, a
 6. Once there, click on the `index.html` file. You should see the editor open a file that starts with `<!DOCTYPE html>`. Look for the line that says `<h1>Hi! My name is </h1>` and add your name before the closing tag (i.e. `</h1>`). To publish your change (aka commit and push your change), you will need to go to the source control tab and add the file, commit with a message, and push the commit to your `main` branch. Luckily, as long you follow the screenshot below, you will be able to do all of these things within the virtual editor: ![commit-exmaple](readme-assets/commit-example.gif). Wait a couple seconds and you will be able to see your name on your website!
 7. Go back to `index.html` and find the line that says `Add some background about yourself here!`. Replace that line with a fun fact about yourself. Then, repeat the same process of pushing your change by going the source control tab, adding the file, typing a commit message, and then clicking the checkmark icon. The message can be `add fun fact`
 8. Let's try replacing the empty profile picture with either a picture of yourself or something you like. This step will be left for you to figure out. Try googling `how to add image HTML`. If you would like to add an image to your repository, you can simply drag the file in. For exmaple: ![local-file-exmaple](readme-assets/local-file-example.gif). Be sure to commit and push your changes in order to see it on your website.
-9. Congratulations! You have passed the HTML section of this assessment!
+9. Congratulations! You have passed the HTML section of this assessment! Continue to the Javascript section to finish the activity. 
 
 
 
