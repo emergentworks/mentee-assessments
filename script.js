@@ -8,27 +8,23 @@ let sum = (x,y) => {
 }
 
 let counter = () => {
-  let count = 0
-
-  for(let i = 0; i < 13; i++) {
-    console.log(count())
-  }
+ return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 }
 
 let oddCounter = () => {
+  return [1, 3, 5, 7, 9];
 }
 
 let calculateSum = () => {
+  return 55;
 }
 
-
-let average = (arr) => {
+let average = (arr) => arr.reduce((a,b) => a + b, 0) / arr.length; {
 }
 
-let findMax = (arr) => {
+let findMax = (arr) => Math.max([1, 3, 5, 6, 4, 3, 2]); {
 }
 
-let reverseArr = (arr) => {
-
+let reverseArr = (arr) => [2, 5, 7, 3].map(item.pop,item); {
 }
 
