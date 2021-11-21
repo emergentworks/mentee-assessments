@@ -1,11 +1,17 @@
 // Add your code here! Good Luck!
 
 
-let sum = () => {
+let sum = (x,y) => {
   // hint: dont forget to return your answer in this function
+return(x+y)
 }
 
 let counter = () => {
+  let count = 0
+
+  for(let i = 0; i < 13; i++) {
+    console.log(count())
+  }
 }
 
 let oddCounter = () => {
