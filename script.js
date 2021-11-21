@@ -1,9 +1,9 @@
 // Add your code here! Good Luck!
 
 
-let sum = (x,y) => x + y; {
+let sum = (x,y) => {
   // hint: dont forget to return your answer in this function
-  return sum()
+  return sum(5,2)
 }
 
 let counter = () => {
