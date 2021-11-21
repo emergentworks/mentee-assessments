@@ -61,6 +61,7 @@ body {
 	width: 80%;
 	max-width: 1320px;
 	margin: 0 auto;
+	margin-left: 22px;
 }
 
 .section.js-challenges {
