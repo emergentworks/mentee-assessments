@@ -75,13 +75,13 @@ body {
 	flex-direction: column;
 }
 
-.avatar-container {
+/* .avatar-container {
 	position: relative;
 	overflow: hidden;
 	height: 400px;
 	width: 1050px;
 	border-radius: 7%;
-}
+} */
 
 .avatar {
 	width: 100%;
