@@ -3,7 +3,8 @@
 
 let sum = (x,y) => {
   // hint: dont forget to return your answer in this function
-  return sum(1,2)
+  let sum = x + y;
+  return sum()
 }
 
 let counter = () => {
