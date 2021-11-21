@@ -84,7 +84,7 @@ body {
 } */
 
 .avatar {
-	width: 50%;
+	width: 75%;
 	height: auto;
 	overflow: hidden;
 	object-fit: cover;
