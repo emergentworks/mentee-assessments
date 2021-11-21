@@ -87,7 +87,7 @@ body {
 	width: 75%;
 	height: 75%;
 	/* overflow: hidden; */
-	object-fit: cover;
+	object-fit: fill;
 	object-position: top center;
 }
 
