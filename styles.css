@@ -85,7 +85,7 @@ body {
 
 .avatar {
 	width: 75%;
-	height: auto;
+	height: 75%;
 	overflow: hidden;
 	object-fit: cover;
 	object-position: top center;
