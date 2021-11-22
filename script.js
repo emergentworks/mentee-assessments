@@ -19,12 +19,13 @@ let calculateSum = () => {
   return 55;
 }
 
-let average = (arr) => arr.reduce((a,b) => a + b, 0) / arr.length; {
-}
+let average = (arr) => arr.reduce((a,b) => a + b, 0) / arr.length;
+return average()
 
-let findMax = (arr) => Math.max([1, 3, 5, 6, 4, 3, 2]); {
-}
+let findMax = (arr) => Math.max([1, 3, 5, 6, 4, 3, 2]);
+return findMax()
 
-let reverseArr = (arr) => [2, 5, 7, 3].map(item.pop,item); {
-}
+
+let reverseArr = (arr) => [2, 5, 7, 3].map(item.pop,item); 
+return reverseArr()
 
