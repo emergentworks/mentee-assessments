@@ -75,6 +75,10 @@ body {
 	font-size: small;
 }
 
+#boldLinkAndText {
+	font-weight: bold;
+}
+
 .section.js-challenges {
 	background-color: #545454;
 	display: flex;
