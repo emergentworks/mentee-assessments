@@ -78,9 +78,10 @@ body {
 #mentorGraphicLink {
 	font-style: italic;
 	text-decoration: none;
+	font-size: small;
 }
 
-p > a#boldLinkAndText > span {
+span#boldLinkAndText {
 	font-weight: bold;
 }
 
