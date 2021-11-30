@@ -2,8 +2,8 @@
 
 
 let sum = (a,b) => {
-  console.log('the sum of ' + a + ' + ' + b + ' is ' + a+b);
-  return a + b;
+  console.log('the sum of ' + a + ' + ' + b + ' is ' + parseInt(a) + parseInt(b);
+  return parseInt(a) + parseInt(b);
 }
 
 let counter = () => {
