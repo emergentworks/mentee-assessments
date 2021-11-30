@@ -1,8 +1,8 @@
 // Add your code here! Good Luck!
 
 
-let sum = () => {
-  // hint: dont forget to return your answer in this function
+let sum = (a,b) => {
+  return a + b;
 }
 
 let counter = () => {
