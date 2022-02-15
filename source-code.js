@@ -1,3 +1,7 @@
+let sum = (a,b) => {
+  console.log('the sum of ' + a + ' + ' + b + ' is ' + (parseInt(a) + parseInt(b)));
+  return parseInt(a) + parseInt(b);
+}
 // Code for testing challenge solutions
 let testSummation = () => {
   return sum(5, 2) == 7
